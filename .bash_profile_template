@@ -1,0 +1,37 @@
+#!/bin/sh
+
+################################################################################
+# Java Jenv Init                                                               #
+################################################################################
+
+eval "$(jenv init -)"
+
+################################################################################
+# ENV VARS - Add env vars here                                                 #
+################################################################################
+
+export JAVA_HOME=$(jenv javahome)
+export MAVEN_OPTS="-Xmx512m -Djava.awt.headless=true"
+export WORK=/opt/spectrum_health
+export HOME_BIN=$WORK/bin
+export TNS_ADMIN=$WORK/oracleTns/network/admin
+export DOTFILES_HOME=$HOME/.dotfiles
+
+################################################################################
+# GIT PROFILE                                                                  # 
+################################################################################
+
+source ~/.git_profile
+source $DOTFILES_HOME/git-completion.bash
+
+################################################################################
+# ALIASES - Add aliases from bash_buffet here                                  #
+################################################################################
+
+alias brew="all_proxy=http://$USER:@proxy.spectrum-health.org:9090 brew"
+
+################################################################################
+# PATH - Append executable locations here                                      #
+################################################################################
+
+export PATH=$JAVA_HOME/bin:$HOME/.jenv/bin:$HOME_BIN:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
