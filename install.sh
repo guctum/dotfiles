@@ -65,12 +65,6 @@ if [[ ! -d $JAVA_HOME ]]; then
         jenv global 1.8
     fi
 
-    if [[ -z $(keytool -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass "changeit" -list -alias artifactory) ]]; then
-        sudo keytool -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass "changeit" -importcert -alias artifactory -file ~/Downloads/artifactory.cert
-        rm ~/Downloads/artifactory.cert
-    else
-        printf "The artifactory keystore alias already exists. Skipping...\n"
-    fi
 else
     printf "\033[0;32m\$JAVA_HOME\033[0m:[$JAVA_HOME] is already set up. Skipping...\n"
 fi

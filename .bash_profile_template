@@ -12,9 +12,8 @@ eval "$(jenv init -)"
 
 export JAVA_HOME=$(jenv javahome)
 export MAVEN_OPTS="-Xmx512m -Djava.awt.headless=true"
-export WORK=/opt/spectrum_health
+export WORK=/work
 export HOME_BIN=$WORK/bin
-export TNS_ADMIN=$WORK/oracleTns/network/admin
 export DOTFILES_HOME=$HOME/.dotfiles
 
 ################################################################################
@@ -28,7 +27,7 @@ source $DOTFILES_HOME/git-completion.bash
 # ALIASES - Add aliases from bash_buffet here                                  #
 ################################################################################
 
-alias brew="all_proxy=http://$USER:@proxy.spectrum-health.org:9090 brew"
+alias brew=
 
 ################################################################################
 # PATH - Append executable locations here                                      #
