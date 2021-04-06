@@ -36,11 +36,10 @@ if [[ ! -f $(which brew) ]]; then
 else
   printf "\033[0;32m\$(which brew)\033[0m:[$(which brew)] already exists. Skipping...\n"
 fi
-
-brewp="" # figure out what should go in here
+# figure out what should go in here
 printf "Updating Brewfile casks and brews...\n"
-eval "$brewp tap homebrew/bundle" > /dev/null 2>&1
-eval "$brewp bundle --file=$BREW_FILE" > /dev/null 2>&1
+eval "brew tap homebrew/bundle" > /dev/null 2>&1
+eval "brew bundle --file=$BREW_FILE" > /dev/null 2>&1
 
 # -----------------------------------------------------------------
 
