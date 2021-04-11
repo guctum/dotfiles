@@ -7,3 +7,4 @@ brew "jenv"          # used for switching versions of java
 brew "maven"         # needed to build java maven projects
 brew "gradle"        # needed to build java gradle projects
 brew "wget"          # used to get maven settings.xml from artifactory
+brew "go"            # latest golang version
